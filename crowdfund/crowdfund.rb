@@ -1,4 +1,6 @@
 class Project
+  attr_reader :fund, :target
+  attr_accessor :name
  def initialize name, fund, target=1000
   @name = name
   @fund = fund
@@ -15,8 +17,17 @@ class Project
   "Project #{@name} got more funds!"
  end
 
+ def total_funding
+  @target - @fund
+ end 
+
+
+ def name= name
+  @name = name.capitalize
+ end
+
  def to_s
-  "Project #{@anme} has #{@fund} in funding towards a goal of #{@target}."
+  "Project #{@name} has #{@fund} in funding towards a goal of #{@target}."
  end 
 end
 
@@ -25,5 +36,8 @@ p=Project.new 'proiect',100
 p.add_funds
 p.removing_funds
 puts p
-
+ p.name='proj'
+puts "---------------------"
+puts p
 puts 
+
