@@ -25,3 +25,5 @@ p=Project.new 'proiect',100
 p.add_funds
 p.removing_funds
 puts p
+
+puts 
