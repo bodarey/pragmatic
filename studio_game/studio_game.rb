@@ -16,10 +16,12 @@ class Player
 
   def blam
     @health-=10
+    "#{name} got blamed"
   end
 
   def w00t
     @health +=15
+    "#{name} got w00ted"
   end
 
   def score
@@ -39,11 +41,17 @@ player1 = Player.new('moe',100)
 player2 =Player.new("Larry",60)
 player3 =Player.new("curly",125)
 #player2.w00t #player3.blam
-puts player2
-puts player3
-puts player1
-puts player1.health
-player1.name = "lawrence"
-puts player1
-puts player1.score
-player1
+players = Array.new
+players << player1
+players << player2
+players << player3
+
+#players.each {|x| puts x}
+#players.each {|x| puts x; puts x.blam;puts x.w00t;puts x.blam}
+#players.each {|x| puts x.health}
+players.delete(player3)
+
+puts players.inspect
+players << Player.new('shemp',90)
+
+puts players.inspect
