@@ -1,54 +1,7 @@
-class Project
-  attr_reader :fund, :target
-  attr_accessor :name
- def initialize name, fund, target=1000
-  @name = name
-  @fund = fund
-  @target = target
- end
 
- def removing_funds fund=15
-   @fund -= fund
-   "Project #{@name} lost some funds! "
- end
 
- def add_funds fund=25
-  @fund += fund
-  "Project #{@name} got more funds!"
- end
-
- def total_funding
-  @target - @fund
- end 
-
- # def fund
- #  1111
- # end
- def name= name
-  @name = name.capitalize
- end
-
- def to_s
-  "Project #{@name} has #{@fund} in funding towards a goal of #{@target}."
- end 
-end
-
-class Fundraising
-
-  def initialize name
-    @title = name
-    @projects =[]
-  end
-
-  def add_project p
-    @projects << p
-  end
-
-  def show
-    @projects.each {|x| puts x.add_funds; puts x.removing_funds; puts x}
-  end
-
-end
+require_relative 'fundraising.rb'
+require_relative 'project.rb'
 
 p1=Project.new 'proiect1',100
 p2=Project.new 'proiect2',200,3000

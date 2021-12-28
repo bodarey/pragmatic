@@ -1,4 +1,4 @@
-require_relative 'player.rb'
+#require_relative 'player.rb'
 class Game
   attr_reader :title
    def initialize name
